@@ -1,24 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Directory  from './directory';
+import { SearchBox, initializeIcons, Text, Stack } from '@fluentui/react';
+
+const appTokens = {
+  padding: 10
+}
 
 function App() {
+
+  initializeIcons();
+
+  const listing = Directory.map((pkg, i) => 
+    <div>{pkg.package}</div>
+  );
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Stack tokens={{appTokens}}>
+        <Text variant={'large'}>Fluent UI Directory</Text>
+        <SearchBox placeholder="Search" onSearch={newValue => console.log('value is ' + newValue)} />
+        <div>
+          {listing}
+        </div>
+
+      </Stack>
     </div>
   );
 }
