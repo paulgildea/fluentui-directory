@@ -1,8 +1,7 @@
 import React from 'react';
 import './App.css';
 import Directory  from './directory';
-import { DarkCustomizations } from '@uifabric/theme-samples';
-import { SearchBox, initializeIcons, Text, Stack, Link, Fabric, Customizer, createTheme, Customizations, Toggle } from '@fluentui/react';
+import { SearchBox, initializeIcons, Text, Stack, Link, Fabric, createTheme, Customizations} from '@fluentui/react';
 
 const appTokens = {
   padding: 10
