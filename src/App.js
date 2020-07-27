@@ -20,6 +20,7 @@ function App() {
       <td>{library.type}</td>
       <td><Link href={library.repo_url}>{library.repo_url}</Link></td>
       <td><Link href={library.package_url}>{library.package_url}</Link></td>
+      <td>{ library.design_kit_url.map((kit, i) => <Stack><Link href={kit}>{kit}</Link></Stack>)}</td>
     </tr>
 );
 
