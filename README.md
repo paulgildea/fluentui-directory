@@ -1,7 +1,12 @@
+# Fluent UI Directory
+This project helps index and catalog the various component libraries that are part of Fluent UI. 
+
+![Azure Static Web Apps CI/CD](https://github.com/paulgildea/fluentui-directory/workflows/Azure%20Static%20Web%20Apps%20CI/CD/badge.svg)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
-
+ 
 In the project directory, you can run:
 
 ### `yarn start`
