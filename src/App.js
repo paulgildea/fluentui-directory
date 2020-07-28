@@ -32,7 +32,7 @@ const darkTheme = createTheme({
     black: '#f8f8f8',
     white: '#0f0f0f',
   }});
-  
+
 const searchStyles = {
   root: {
     width: '320px',
@@ -53,6 +53,7 @@ function App() {
     <tr>
       <td>{library.name}</td>
       <td>{library.type}</td>
+      <td><Link href={library.website}>{library.website}</Link></td>
       <td><Link href={library.repo_url}>{library.repo_url}</Link></td>
       <td><Link href={library.package_url}>{library.package_url}</Link></td>
       <td>{ library.design_kit_url.map((kit, i) => <Stack><Link href={kit}>{kit}</Link></Stack>)}</td>
