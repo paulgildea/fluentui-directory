@@ -86,6 +86,15 @@ const Directory =
             'design_kit_url': ['https://aka.ms/figmatoolkit'],
         },
         {
+            'name': 'Microsoft Graph Toolkit',
+            'type': 'Component Library',
+            'icon': 'https://c.s-microsoft.com/favicon.ico?v2',
+            'website': 'https://docs.microsoft.com/en-us/graph/toolkit/overview',
+            'repo_url': 'https://github.com/microsoftgraph/microsoft-graph-toolkit',
+            'package_url': 'https://www.npmjs.com/package/@microsoft/mgt',
+            'design_kit_url': [],
+        },
+        {
             'name': 'Fluent UI React - Charting',
             'type': 'Component',
             'icon': 'https://c.s-microsoft.com/favicon.ico?v2',
