@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './App.css';
 import Directory  from './directory';
-import { SearchBox, initializeIcons, Text, Stack, Link, Fabric, createTheme, Customizations} from '@fluentui/react';
+import { SearchBox, initializeIcons, Text, Stack, Link, Fabric, createTheme, Customizations, FontSizes, Image, ImageFit } from '@fluentui/react';
+import { Card } from '@uifabric/react-cards';
 
 const appTokens = {
   padding: 10
@@ -54,19 +55,51 @@ function App() {
     setListing(retValue);
   };
 
-  const headers = Directory.schema.map((header, i) => 
-    <th>{header}</th> );
-  
-  const directoryListing = listing.map((library, i) => 
-    <tr>
-      <td>{library.name}</td>
-      <td>{library.type}</td>
-      <td><Link href={library.website}>{library.website}</Link></td>
-      <td><Link href={library.repo_url}>{library.repo_url}</Link></td>
-      <td><Link href={library.package_url}>{library.package_url}</Link></td>
-      <td>{ library.design_kit_url.map((kit, i) => <Stack><Link href={kit}>{kit}</Link></Stack>)}</td>
-    </tr>
-);
+  const cardStackTokens = { childrenGap: 20 };
+  const cardTokens = { childrenMargin: 12 };
+  const cardLinkStyles = {
+    root:{
+      fontSize: FontSizes.small
+    }
+  };
+  const cardStyles = {
+    root: {
+      border: '1px solid #fff',
+    }
+  };
+
+  const imgStyles = {
+    width: '50px',
+    height: '50px',
+  }
+  const cardFooterStyles = {
+    root: {
+      alignSelf: 'end',
+      borderLeft: '1px solid #fff;',
+    }
+  }
+  const cardFooterStackTokens =  {
+    padding: 10
+  }
+  const cardListing = listing.map((library, i) => 
+    <Card tokens={cardTokens} styles={cardStyles} horizontal>
+      <Card.Item>
+        <Link href={library.website}><Image src={library.icon} styles={imgStyles} height={100} width={100} imageFit={ImageFit.centerContain}/></Link>
+      </Card.Item>
+      <Card.Section horizontalAlign="start">
+        <Text variant="small">{library.type}</Text>
+        <Text variant="large">{library.name}</Text>
+        <Link href={library.website} styles={cardLinkStyles}>{library.website}</Link>
+      </Card.Section>
+      <Card.Section horizontalAlign="end" styles={cardFooterStyles}>
+        <Stack horizontalAlign="start" tokens={cardFooterStackTokens}>
+          <Link href={library.repo_url} styles={cardLinkStyles}>GitHub Repo</Link>
+          <Link href={library.package_url} styles={cardLinkStyles}>Package</Link>
+          <Link href={library.design_kit_url} styles={cardLinkStyles}>Design Toolkit</Link>
+        </Stack>
+      </Card.Section>
+    </Card>
+  );
 
   return (
     <div className="App">
@@ -78,14 +111,9 @@ function App() {
           <SearchBox iconProps={{iconName: 'Filter'}} styles={searchStyles} placeholder="Filter" onChange={filterResults} onClear={(ev) => {
             setListing(Directory.listing);
           }} />
-          <table>
-            <thead>
-              {headers}
-            </thead>
-            <tbody>
-              {directoryListing}
-            </tbody>
-          </table>
+        </Stack>
+        <Stack horizontalAlign="center" tokens={cardStackTokens}>
+          {cardListing}
         </Stack>
       </Fabric>
     </div>

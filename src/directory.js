@@ -5,6 +5,7 @@ const Directory =
         {
             'name': 'Fluent UI React',
             'type': 'Component Library',
+            'icon': 'https://www.microsoft.com/design/assets/favicons/favicon-192.png',
             'website': 'https://www.microsoft.com/design/fluent/#/web',
             'repo_url': 'https://github.com/microsoft/fluentui',
             'package_url': 'https://www.npmjs.com/package/@fluentui/react',
@@ -13,6 +14,7 @@ const Directory =
         {
             'name': 'Fluent UI Northstar',
             'type': 'Component Library',
+            'icon': 'https://www.microsoft.com/design/assets/favicons/favicon-192.png',
             'website': 'https://fluentsite.z22.web.core.windows.net/',
             'repo_url': 'https://github.com/microsoft/fluentui',
             'package_url': 'https://www.npmjs.com/package/@fluentui/react-northstar',
@@ -22,6 +24,7 @@ const Directory =
         {
             'name': 'Fluent UI Web Components',
             'type': 'Component Library',
+            'icon': 'https://www.microsoft.com/design/assets/favicons/favicon-192.png',
             'website': '',
             'repo_url': 'https://github.com/microsoft/fluentui',
             'package_url': 'https://www.npmjs.com/package/@fluentui/web-components',
@@ -30,6 +33,7 @@ const Directory =
         {
             'name': 'Fluent UI React Natve',
             'type': 'Component Library',
+            'icon': 'https://www.microsoft.com/design/assets/favicons/favicon-192.png',
             'website': 'https://www.microsoft.com/design/fluent/#/crossplatform',
             'repo_url': 'https://github.com/microsoft/fluentui-react-native',
             'package_url': 'https://www.npmjs.com/package/@fluentui/react-native',
@@ -38,6 +42,7 @@ const Directory =
         {
             'name': 'Fluent UI iOS',
             'type': 'Component Library',
+            'icon': 'https://www.microsoft.com/design/assets/favicons/favicon-192.png',
             'website': 'https://www.microsoft.com/design/fluent/#/ios',
             'repo_url': 'https://github.com/microsoft/fluentui-apple',
             'package_url': 'https://cocoapods.org/pods/MicrosoftFluentUI',
@@ -46,6 +51,7 @@ const Directory =
         {
             'name': 'Fluent UI macOS',
             'type': 'Component Library',
+            'icon': 'https://www.microsoft.com/design/assets/favicons/favicon-192.png',
             'website': 'https://www.microsoft.com/design/fluent/#/macos',
             'repo_url': 'https://github.com/microsoft/fluentui-apple',
             'package_url': 'https://cocoapods.org/pods/MicrosoftFluentUI',
@@ -54,6 +60,7 @@ const Directory =
         {
             'name': 'Fluent UI Android',
             'type': 'Component Library',
+            'icon': 'https://www.microsoft.com/design/assets/favicons/favicon-192.png',
             'website': 'https://www.microsoft.com/design/fluent/#/android',
             'repo_url': 'https://github.com/microsoft/fluentui-android',
             'package_url': 'https://mvnrepository.com/artifact/com.microsoft.fluentui/FluentUIAndroid',
@@ -62,6 +69,8 @@ const Directory =
         {
             'name': 'Fluent UI Teams Components',
             'type': 'Component Library',
+            'icon': 'https://www.microsoft.com/design/assets/favicons/favicon-192.png',
+
             'website': '',
             'repo_url': 'https://github.com/microsoft/fluentui-teams',
             'package_url': 'https://github.com/microsoft/fluentui-teams',
@@ -70,6 +79,7 @@ const Directory =
         {
             'name': 'Win UI',
             'type': 'Component Library',
+            'icon': 'https://microsoft.github.io/microsoft-ui-xaml/img/winui-logo.png',
             'website': 'https://microsoft.github.io/microsoft-ui-xaml/',
             'repo_url': 'https://github.com/microsoft/microsoft-ui-xaml',
             'package_url': 'https://aka.ms/winui3/preview2',
