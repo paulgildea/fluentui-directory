@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './App.css';
 import Directory  from './directory';
-import { SearchBox, initializeIcons, Text, Stack, Link, Fabric, createTheme, Customizations, FontSizes, Image, ImageFit } from '@fluentui/react';
-import { Card } from '@uifabric/react-cards';
+import { SearchBox, initializeIcons, Text, Stack, Link, Fabric, createTheme, Customizations, FontSizes, Image, ImageFit, IStyleFunctionOrObject, ILinkStyleProps, ILinkStyles, } from '@fluentui/react';
+import { Card, ICardSectionTokens, ICardSectionStyles, ICardStyles } from '@uifabric/react-cards';
 
 const appTokens = {
   padding: 10
@@ -47,9 +47,9 @@ function App() {
   initializeIcons();
   Customizations.applySettings({theme: darkTheme});
   const [listing, setListing] = useState(Directory.listing);
-  const filterResults = (ev, newValue) => {
+  const filterResults = (ev?: React.ChangeEvent<HTMLInputElement>, newValue?: string) => {
     const retValue = Directory.listing.filter((item) => {
-      const lowerCaseValue = newValue.toLowerCase();
+      const lowerCaseValue:string = newValue!.toLowerCase();
       return item.name.toLowerCase().includes(lowerCaseValue); 
     });
     setListing(retValue);
@@ -57,50 +57,48 @@ function App() {
 
   const cardStackTokens = { childrenGap: 20 };
   const cardTokens = { childrenMargin: 12 };
-  const cardSectionStyles =  {
-    minWidth: '320px',
-    width: '320px'
-    
-  }
-  const cardLinkStyles = {
+  const cardSectionStyles: ICardSectionStyles =  {
+    root: {
+      width: '320px',
+    }
+  };
+  const cardLinkStyles: IStyleFunctionOrObject<ILinkStyleProps, ILinkStyles> = {
     root:{
       fontSize: FontSizes.small
     }
   };
-  const cardStyles = {
+
+
+  const cardStyles: ICardStyles = {
     root: {
       border: '1px solid #fff',
     }
   };
 
-  const imgStyles = {
-    width: '50px',
-    height: '50px',
-  }
-  const cardFooterStyles = {
+  const cardFooterStyles: ICardSectionStyles = {
     root: {
-      alignSelf: 'end',
+      alignSelf: 'stretch',
       borderLeft: '1px solid #fff;',
     }
   }
-  const cardFooterStackTokens =  {
-    padding: 10
+  const cardFooterTokens: ICardSectionTokens =  {
+    padding: '0px, 12px, 0px 12px',
   }
   const cardListing = listing.map((library, i) => 
     <Card tokens={cardTokens} styles={cardStyles} horizontal>
       <Card.Item>
-        <Link href={library.website}><Image src={library.icon} styles={imgStyles} height={100} width={100} imageFit={ImageFit.centerContain}/></Link>
+        <Link href={library.website}><Image src={library.icon} height={100} width={100} imageFit={ImageFit.centerContain}/></Link>
       </Card.Item>
       <Card.Section horizontalAlign="start" styles={cardSectionStyles}>
         <Text variant="small">{library.type}</Text>
         <Text variant="large">{library.name}</Text>
         <Link href={library.website} styles={cardLinkStyles}>{library.website}</Link>
       </Card.Section>
-      <Card.Section horizontalAlign="end" styles={cardFooterStyles}>
-        <Stack horizontalAlign="start" tokens={cardFooterStackTokens}>
-          <Link href={library.repo_url} styles={cardLinkStyles}>GitHub Repo</Link>
+      <Card.Section styles={cardFooterStyles} tokens={cardFooterTokens}>
+        <Stack horizontalAlign="start">
+          <Link href={library.repo_url} styles={cardLinkStyles}>Repo</Link>
           <Link href={library.package_url} styles={cardLinkStyles}>Package</Link>
-          <Link href={library.design_kit_url} styles={cardLinkStyles}>Design Toolkit</Link>
+          <Link href={library.design_kit_url[0]} styles={cardLinkStyles}>Design Toolkit</Link>
         </Stack>
       </Card.Section>
     </Card>
