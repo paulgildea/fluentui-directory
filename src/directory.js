@@ -85,6 +85,15 @@ const Directory =
             'package_url': 'https://aka.ms/winui3/preview2',
             'design_kit_url': ['https://aka.ms/figmatoolkit'],
         },
+        {
+            'name': 'Fluent UI React - Charting',
+            'type': 'Component',
+            'icon': 'https://c.s-microsoft.com/favicon.ico?v2',
+            'website': '',
+            'repo_url': 'https://github.com/microsoft/fluentui/tree/master/packages/charting',
+            'package_url': 'https://www.npmjs.com/package/@uifabric/charting',
+            'design_kit_url': [],
+        },
     ]
 };
 

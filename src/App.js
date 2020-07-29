@@ -57,6 +57,11 @@ function App() {
 
   const cardStackTokens = { childrenGap: 20 };
   const cardTokens = { childrenMargin: 12 };
+  const cardSectionStyles =  {
+    minWidth: '320px',
+    width: '320px'
+    
+  }
   const cardLinkStyles = {
     root:{
       fontSize: FontSizes.small
@@ -86,7 +91,7 @@ function App() {
       <Card.Item>
         <Link href={library.website}><Image src={library.icon} styles={imgStyles} height={100} width={100} imageFit={ImageFit.centerContain}/></Link>
       </Card.Item>
-      <Card.Section horizontalAlign="start">
+      <Card.Section horizontalAlign="start" styles={cardSectionStyles}>
         <Text variant="small">{library.type}</Text>
         <Text variant="large">{library.name}</Text>
         <Link href={library.website} styles={cardLinkStyles}>{library.website}</Link>
