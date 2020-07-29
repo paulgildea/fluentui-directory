@@ -64,7 +64,8 @@ function App() {
   };
   const cardLinkStyles: IStyleFunctionOrObject<ILinkStyleProps, ILinkStyles> = {
     root:{
-      fontSize: FontSizes.small
+      fontSize: FontSizes.small,
+      textAlign: 'left'
     }
   };
 
